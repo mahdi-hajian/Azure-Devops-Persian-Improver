@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Azure Devops Gregorian to Jalali Date Converter",
+  "version": "1.1",
+  "description": "Convert Gregorian dates to Jalali on analytics.mohaymen.ir/dev",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    }
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libs/jalaali.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
