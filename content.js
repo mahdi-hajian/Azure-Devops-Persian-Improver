@@ -15,16 +15,14 @@ chrome.storage.sync.get(["enabled"], (res) => {
       const gMonth = monthMap[mon];
       if (!gMonth) return match;
       const { jy, jm, jd } = jalaali.toJalaali(parseInt(year), gMonth, parseInt(day));
-      // ${match} 
-      return `(${jy}/${jm}/${jd})`;
+      return `${match} (${jy}/${jm}/${jd})`;
     });
   
     text = text.replace(/\b([A-Za-z]{3}) (\d{1,2})(?!, \d{4})\b/g, (match, mon, day) => {
       const gMonth = monthMap[mon];
       if (!gMonth) return match;
       const { jy, jm, jd } = jalaali.toJalaali(currentYear, gMonth, parseInt(day));
-      // ${match} 
-      return `(${jy}/${jm}/${jd})`;
+      return `${match} (${jy}/${jm}/${jd})`;
     });
 
     return text;
